@@ -1,0 +1,75 @@
+@import "sidenav.css";
+@import "brandnav.css";
+
+:root {
+  --surface: hsl(221, 39%, 11%);
+  --surface2: hsl(215, 28%, 17%);
+  --text: #f3f4f6;
+  --text2: #9ca3af;
+  --brandHSL: 328 100% 54%;
+
+  @media (prefers-color-scheme: light) {
+    --surface: hsl(220deg, 14%, 96%); /*lch(90 0 0);*/
+    --surface2: hsl(0deg, 0%, 100%); /*lch(100 0 0);*/
+    --text: lch(20 0 0);
+    --text2: lch(40 0 0);
+  }
+}
+
+body {
+  min-block-size: 100vh;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  color: var(--text);
+}
+
+h1,h2,h3,h4,figure {
+  margin: 0;
+  
+  color: var(--text);
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  max-inline-size: 30ch;
+}
+
+p {
+  line-height: 1.5;
+  color: var(--text2);
+  max-inline-size: 50ch;
+}
+
+a {
+  color: hsl(328 100% 74%);
+  outline-color: hsl(var(--brandHSL));
+  outline-offset: 5px;
+  margin-block-start: 1rem;
+
+  &:hover {
+    color: hsl(var(--brandHSL));
+  }
+}
+
+
+dl {
+  display: grid;
+  grid-gap: 4px 16px;
+  grid-template-columns: max-content;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  grid-column-start: 1;
+  padding-bottom: .6rem
+}

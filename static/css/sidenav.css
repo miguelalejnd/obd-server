@@ -1,0 +1,71 @@
+body {
+  display: grid;
+  grid: [stack] 1fr / min-content [stack] 1fr;
+
+  /*@media (max-width: 540px) {
+    & > :matches(aside, main) {
+      grid-area: stack;
+    }
+  }*/
+
+  @media (max-width: 768px) {
+    > aside,
+    > main {
+      grid-area: stack;
+    }
+  }
+}
+
+.sidenav {
+  --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: .6s;
+
+  display: grid;
+  grid-template-columns: [nav] 2fr [escape] 1fr;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow: hidden auto;
+    overscroll-behavior: contain;
+
+    visibility: hidden; /* not keyboard accessible when closed */
+    transform: translateX(-110vw);
+    will-change: transform;
+    transition: 
+      transform var(--duration) var(--easeOutExpo),
+      visibility 0s linear var(--duration);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --duration: 1ms;
+  }
+}
+
+.sidenav__open {
+      visibility: visible;
+      transform: translateX(0);
+      transition: transform var(--duration) var(--easeOutExpo);
+}
+
+#sidenav-button,
+.sidenav-close {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  border-width: 0;
+  margin: 0;
+  user-select: none;
+  touch-action: manipulation;
+  background-color: transparent;
+  /* transition: box-shadow .25s ease; */
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.sidenav-close:focus {
+  outline: 1px solid transparent;
+  /* box-shadow: 0 0 0 1px hsl(328 100% 54%) inset */
+}

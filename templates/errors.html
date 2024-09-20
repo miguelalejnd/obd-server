@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <title>Sidenav</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ff69b4">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="💀🤘">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/blokk/blokk.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+  </head>
+  <body>
+    <aside id="sidenav-open" class="sidenav">
+      <nav>
+        <a href="#">Instantanea</a>
+        <a href="#">C&oacute;digos de error</a>
+      </nav>
+      
+      <button id="sidenav-close" class="sidenav-close" title="Close Menu" aria-label="Close Menu"></button>
+    </aside>
+
+    <main>
+      <header>
+        <button id="sidenav-button" class="hamburger" title="Open Menu" aria-label="Open Menu">
+          <svg viewBox="0 0 50 40" role="presentation" focusable="false" aria-label="trigram for heaven symbol">
+            <line x1="0" x2="100%" y1="10%" y2="10%" />
+            <line x1="0" x2="100%" y1="50%" y2="50%" />
+            <line x1="0" x2="100%" y1="90%" y2="90%" />
+          </svg>
+        </button>
+        <h1>Instantanea</h1>
+      </header>
+      
+      <article>
+        <dl>
+          <dt>Versión del adaptador elm:</dt>
+          <dd id="elm_version">0</dd>
+        </dl> 
+      </article>
+
+      <article>
+        <dl>
+          <dt>Presi&oacute;n barom&eacute;trica ambiental:</dt>
+          <dd id="barometric_pressure">0</dd>
+          <dt>Voltaje del m&oacute;dulo de control:</dt>
+          <dd id="control_module_voltage">0</dd>
+          <dt>Temperatura del l&iacute;quido refrigerante:</dt>
+          <dd id="coolant_temperature">0</dd>
+          <dt>Distancia recorrida con el indicador de error:</dt>
+          <dd id="distance_traveled_w_mil">0</dd>
+          <dt>Carga del motor:</dt>
+          <dd id="engine_load">0</dd>
+          <dt>Revoluciones por minuto del motor:</dt>
+          <dd id="engine_rpm">0</dd>
+          <dt>Tiempo en ejecución del motor:</dt>
+          <dd id="engine_runtime">0</dd>
+          <dt>Presi&oacute;n de combustible:</dt>
+          <dd id="fuel_presure">0</dd>
+          <dt>Tipo de combustible:</dt>
+          <dd id="fuel_type">0</dd>
+          <dt>Presi&oacute;n en lumbrera de admisi&oacute;n:</dt>
+          <dd id="intake_pressure">0</dd>
+          <dt>temperatura en lumbrera de admisi&oacute;n:</dt>
+          <dd id="intake_temperature">0</dd>
+          <dt>Flujo de masa de aire (maf):</dt>
+          <dd id="maf">0</dd>
+          <dt>posici&oacute;n del acelerador (%):</dt>
+          <dd id="throttle_position">0</dd>
+          <dt>velocidad del vehcu&iacute;lo:</dt>
+          <dd id="vehicle_speed">0</dd>
+        </dl> 
+        <button id="btn">Actualizar</button>
+      </article>
+    </main>
+  </body>
+</html>
